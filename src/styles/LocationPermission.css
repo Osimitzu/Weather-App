@@ -1,0 +1,11 @@
+.locationPermissionContainer {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: violet;
+  z-index: 100000;
+}
+
+.acceptButton {
+  width: 400px;
+}

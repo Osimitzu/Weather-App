@@ -1,58 +1,76 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-require("dotenv").config();
 import "../styles/App.css";
+import { LocationPermission } from "./LocationPermission";
 import { Title } from "./Title";
 import { SearchInput } from "./SearchInput";
 import { Card } from "./Card";
 import { Button } from "./Button";
+import { DarkButton } from "./DarkButton";
+// import "dotenv/config";
 
 function App() {
   const [info, setInfo] = useState({});
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
+  const [isVisible, setIsVisible] = useState(true);
+  const [nom, setNom] = useState(true);
 
-  const apiKey = process.env.WEATHERKEY;
+  const permissionComponent = () => {
+    setIsVisible(false);
+  };
 
-  useEffect(() => {
+  // Pedimos permiso al usuario de usar su ubicación:
+  const locationAgreement = () => {
+    //Desactivamos la pantalla de permiso:
+    permissionComponent();
     // sacamos la ubicación del usuario con el objeto "navigator":
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        // guardamos la longitud y latitud en variables para utilizarlas en la ruta de nuestra API:
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
-        // Establecemos el valor de nuestras variables a nuestro estado:
-        setLatitude(lat);
-        setLongitude(lon);
-        // Hacemos la petición con la información establecida:
-        axios
-          .get(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
-          )
-          .then((res) => {
-            // Establecemos el valor a nuestro estado "info":
-            setInfo(res.data);
-          })
-          // capturamos el error de la petición:
-          .catch((err) => {
-            console.error(err);
-          });
-      },
-      // capturamos el error del objeto "navigator":
-      (err) => {
-        console.error(err);
-      }
-    );
-  }, []);
-  // Necesito un boton para manejar el acceso a la ubicación del usuario test
+    navigator.geolocation.getCurrentPosition((position) => {
+      // guardamos la longitud y latitud en variables para utilizarlas en la ruta de nuestra API:
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      // Establecemos el valor de nuestras variables a nuestro estado:
+      setLatitude(lat);
+      setLongitude(lon);
+      // Hacemos la petición con la información establecida:
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=1e097b6bc33647b803b01854a9eb07e2`
+        )
+        .then((res) => {
+          // Establecemos el valor a nuestro estado "info":
+          console.log(res.data);
+          setInfo(res.data);
+        })
+        // capturamos el error de la petición:
+        .catch((err) => {
+          console.error(err);
+        });
+    });
+  };
+
+  // useEffect(() => {
+  //   locationAgreement;
+  // }, []);
+
+  // Funcion para cambiar de grados °C a °F
+  const changeDegrees = () => {
+    setNom(!nom);
+  };
+
   return (
     <div className="app">
+      <LocationPermission
+        agreementData={locationAgreement}
+        visible={isVisible}
+      />
       <nav className="navContainer">
         <Title />
         <SearchInput />
+        <DarkButton />
       </nav>
-      <Card data="info" />
-      <Button />
+      <Card data={info} nomenclature={nom} />
+      <Button changeNom={changeDegrees} nomenclature={nom} />
     </div>
   );
 }
