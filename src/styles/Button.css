@@ -1,15 +1,15 @@
 .buttonNom {
   border: none;
   outline: none;
-  background-color: #f1fafe70;
+  /* background-color: #f1fafe50; */
   border-radius: 10px;
-  width: 120px;
+  width: 150px;
   height: 50px;
   margin-top: 60px;
   text-align: center;
-  color: var(--colorP8);
-  transition: all 0.2s ease;
+  color: var(--colorP10);
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .buttonNom:active {

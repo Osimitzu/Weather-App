@@ -15,6 +15,7 @@ function App() {
   const [longitude, setLongitude] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
   const [nom, setNom] = useState(true);
+  const [inputValue, setInputValue] = useState("");
   const [theme, setTheme] = useState(() => {
     if (window.matchMedia("(prefers-color-scheme): dark").matches) {
       return "dark";
@@ -79,17 +80,42 @@ function App() {
     setTheme((prevtheme) => (prevtheme === "light" ? "dark" : "light"));
   };
 
+  const handleInputValue = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSearch = () => {
+    console.log(inputValue);
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=1e097b6bc33647b803b01854a9eb07e2`
+      )
+      .then((res) => {
+        console.log(res.data);
+        setInfo(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   return (
-    <div className="app">
+    <div className="app bg-gradient-to-b from-colorP7 to-colorP3 dark:bg-gradient-to-b dark:from-colorP11 dark:to-colorP7 text-colorP3">
       <LocationPermission
         agreementData={locationAgreement}
         visible={isVisible}
       />
-      <nav className="navContainer">
+      <nav className="appNavContainer">
         <Title />
-        <SearchInput />
         <DarkButton themeInfo={handleChangeTheme} />
       </nav>
+      <div className="appSearchContainer absolute top-20 outline-none border-none">
+        <SearchInput
+          handleInputClick={handleSearch}
+          handleInputChange={handleInputValue}
+        />
+      </div>
+
       <Card data={info} nomenclature={nom} />
       <Button changeNom={changeDegrees} nomenclature={nom} />
     </div>

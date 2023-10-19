@@ -12,8 +12,10 @@ export const Card = ({ data, nomenclature }) => {
   const FMin = `${Math.floor((data.main?.temp_min * 9) / 5 - 459.67)}°F`;
 
   return (
-    <div className="cardContainer">
-      <h1 className="cardH1">{nomenclature ? Celsius : Fahrenheit}</h1>
+    <div className="cardContainer text-colorP10 dark:text-colorP3">
+      <h1 className="cardH1 text-colorP8 dark:text-colorP4">
+        {nomenclature ? Celsius : Fahrenheit}
+      </h1>
       <div className="cardImgContainer">
         <img
           src={`/${data.weather?.[0].icon}.png`}
@@ -22,27 +24,35 @@ export const Card = ({ data, nomenclature }) => {
         />
       </div>
       <div className="cardPContainer">
-        <p className="cardP">
-          <span className="cardSpan">Humidity: </span>
+        <p className="cardP text-colorP8 dark:text-colorP4">
+          <span className="cardSpan text-colorP10 dark:text-colorP3">
+            Humidity:{" "}
+          </span>
           {`${data.main?.humidity}%`}
         </p>
-        <p className="cardP">
-          <span className="cardSpan">Clouds: </span>
+        <p className="cardP text-colorP8 dark:text-colorP4">
+          <span className="cardSpan text-colorP10 dark:text-colorP3">
+            Clouds:{" "}
+          </span>
           {`${data.clouds?.all}%`}
         </p>
         <div className="cardMaxMinContainer">
-          <p className="cardP">
-            <span className="cardSpan">Max: </span>
+          <p className="cardP text-colorP8 dark:text-colorP4">
+            <span className="cardSpan text-colorP10 dark:text-colorP3">
+              Max:{" "}
+            </span>
             {nomenclature ? CMax : FMax}
           </p>
-          <p className="cardP">
-            <span className="cardSpan">Min: </span>
+          <p className="cardP text-colorP8 dark:text-colorP4">
+            <span className="cardSpan text-colorP10 dark:text-colorP3">
+              Min:{" "}
+            </span>
             {nomenclature ? CMin : FMin}
           </p>
         </div>
       </div>
       <div className="cardH2Container">
-        <h2 className="cardH2Country">
+        <h2 className="cardH2Country text-colorP8 dark:text-colorP4">
           {data.name}, {data.sys?.country}
         </h2>
         <h2 className="cardH2Description">{data.weather?.[0].description}</h2>

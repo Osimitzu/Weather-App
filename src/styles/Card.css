@@ -1,15 +1,14 @@
 .cardContainer {
   width: 300px;
   height: 180px;
-  background-color: #f1fafe70;
+  /* background-color: #f1fafe70; */
   display: flex;
   flex-direction: column;
-  border-radius: 30px 80px 20px 20px;
+  border-radius: 30px 30px 20px 20px;
   position: relative;
   z-index: 10;
   box-shadow: 2px 2px 8px 3px rgba(0, 0, 0, 0.3);
-  color: var(--colorP8);
-  transition: all 0.2s ease;
+  /* transition: all 0.2s ease; */
 }
 
 .cardH1 {
@@ -17,9 +16,9 @@
   font-weight: bolder;
   width: fit-content;
   position: absolute;
-  top: 20px;
+  top: 10px;
   left: 10px;
-  color: var(--colorP9);
+  /* color: var(--colorP9); */
 }
 
 .cardImgContainer {
@@ -34,9 +33,9 @@
   width: 180px;
 }
 
-.cardSpan {
+/* .cardSpan {
   color: var(--colorP9);
-}
+} */
 
 .cardPContainer {
   width: fit-content;
@@ -45,7 +44,7 @@
   display: flex;
   flex-direction: column;
   align-items: left;
-  top: 90px;
+  top: 80px;
   left: 10px;
   font-size: 15px;
   font-weight: 500;
@@ -59,7 +58,7 @@
 .cardH2Container {
   width: 100%;
   position: absolute;
-  bottom: 10px;
+  bottom: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -69,7 +68,7 @@
   font-size: 20px;
   font-weight: 700;
   margin-left: 10px;
-  color: var(--colorP9);
+  /* color: var(--colorP9); */
 }
 
 .cardH2Description {

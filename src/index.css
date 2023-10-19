@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --colorP1: #f1fafe;
   --colorP2: #e1f4fd;
@@ -18,20 +22,5 @@
   box-sizing: border-box;
   overflow-x: hidden;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-  color: var(--colorP7);
-
-  background: #56ccf2; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to bottom,
-    #56ccf2,
-    #2f80ed
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #56ccf2,
-    #2f80ed
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* transition: 0.1s; */
 }

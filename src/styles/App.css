@@ -5,9 +5,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
-.navContainer {
+.appNavContainer {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -17,3 +18,8 @@
   position: absolute;
   top: 0;
 }
+
+/* .appSearchContainer {
+  position: absolute;
+  top: 0;
+} */
