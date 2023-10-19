@@ -7,6 +7,7 @@ import { SearchInput } from "./SearchInput";
 import { Card } from "./Card";
 import { Button } from "./Button";
 import { DarkButton } from "./DarkButton";
+import { Footer } from "./Footer";
 // import "dotenv/config";
 
 function App() {
@@ -118,6 +119,9 @@ function App() {
 
       <Card data={info} nomenclature={nom} />
       <Button changeNom={changeDegrees} nomenclature={nom} />
+      <div className="absolute bottom-3">
+        <Footer />
+      </div>
     </div>
   );
 }
