@@ -4,9 +4,13 @@ import "../styles/Title.css";
 export const Title = () => {
   return (
     <>
-      <h1 className="title text-center text-2xl text-colorP10 dark:text-colorP4">
-        Weather App
-      </h1>
+      <div>
+        <a href="#">
+          <h1 className="title text-center text-2xl text-colorP10 dark:text-colorP4">
+            Weather App
+          </h1>
+        </a>
+      </div>
     </>
   );
 };
