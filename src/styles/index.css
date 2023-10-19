@@ -1,3 +1,17 @@
+:root {
+  --colorP1: #f1fafe;
+  --colorP2: #e1f4fd;
+  --colorP3: #bde9fa;
+  --colorP4: #82d8f7;
+  --colorP5: #56ccf2;
+  --colorP6: #17afe0;
+  --colorP7: #0a8dbf;
+  --colorP8: #09709b;
+  --colorP9: #0c5e80;
+  --colorP10: #104f6a;
+  --colorP11: #0b3246;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +21,17 @@
 }
 
 body {
-  background-color: rgb(55, 63, 71);
-  color: rgb(231, 228, 228);
+  color: var(--colorP7);
+
+  background: #56ccf2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #56ccf2,
+    #2f80ed
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #56ccf2,
+    #2f80ed
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

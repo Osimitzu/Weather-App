@@ -1,4 +1,17 @@
-.buttonContainer {
-  background-color: aqua;
-  width: 300px;
+.buttonNom {
+  border: none;
+  outline: none;
+  background-color: #f1fafe70;
+  border-radius: 10px;
+  width: 120px;
+  height: 50px;
+  margin-top: 60px;
+  text-align: center;
+  color: var(--colorP8);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.buttonNom:active {
+  transform: scale(0.93);
 }

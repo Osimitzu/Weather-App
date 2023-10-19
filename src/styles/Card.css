@@ -1,10 +1,80 @@
 .cardContainer {
-  width: 450px;
-  background-color: rgba(245, 245, 245, 0.635);
+  width: 300px;
+  height: 180px;
+  background-color: #f1fafe70;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  color: coral;
+  border-radius: 30px 80px 20px 20px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 2px 2px 8px 3px rgba(0, 0, 0, 0.3);
+  color: var(--colorP8);
+  transition: all 0.2s ease;
+}
+
+.cardH1 {
+  font-size: 55px;
+  font-weight: bolder;
+  width: fit-content;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  color: var(--colorP9);
+}
+
+.cardImgContainer {
+  width: fit-content;
+  position: absolute;
+  right: -10px;
+  top: -40px;
+  z-index: 20;
+}
+
+.cardImg {
+  width: 180px;
+}
+
+.cardSpan {
+  color: var(--colorP9);
+}
+
+.cardPContainer {
+  width: fit-content;
+  text-align: left;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  top: 90px;
+  left: 10px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.cardMaxMinContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.cardH2Container {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cardH2Country {
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 10px;
+  color: var(--colorP9);
+}
+
+.cardH2Description {
+  font-size: 15px;
+  font-weight: 500;
+  margin-right: 10px;
+  margin-top: 5px;
 }

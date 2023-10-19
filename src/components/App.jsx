@@ -15,6 +15,13 @@ function App() {
   const [longitude, setLongitude] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
   const [nom, setNom] = useState(true);
+  const [theme, setTheme] = useState(() => {
+    if (window.matchMedia("(prefers-color-scheme): dark").matches) {
+      return "dark";
+    }
+
+    return "light";
+  });
 
   const permissionComponent = () => {
     setIsVisible(false);
@@ -58,6 +65,20 @@ function App() {
     setNom(!nom);
   };
 
+  // Función para manejar el modo oscuro:
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.querySelector("html").classList.add("dark");
+    } else {
+      document.querySelector("html").classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleChangeTheme = () => {
+    setTheme((prevtheme) => (prevtheme === "light" ? "dark" : "light"));
+  };
+
   return (
     <div className="app">
       <LocationPermission
@@ -67,7 +88,7 @@ function App() {
       <nav className="navContainer">
         <Title />
         <SearchInput />
-        <DarkButton />
+        <DarkButton themeInfo={handleChangeTheme} />
       </nav>
       <Card data={info} nomenclature={nom} />
       <Button changeNom={changeDegrees} nomenclature={nom} />

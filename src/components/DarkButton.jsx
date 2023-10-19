@@ -1,10 +1,11 @@
 import React from "react";
 import "../styles/DarkButton.css";
 
-export const DarkButton = () => {
+export const DarkButton = ({ themeInfo }) => {
   return (
-    <>
-      <button>Dark/light</button>
-    </>
+    <label className="darkSwitch">
+      <input type="checkbox" onClick={themeInfo} />
+      <span className="darkSlider" />
+    </label>
   );
 };
