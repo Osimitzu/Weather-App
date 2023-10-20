@@ -120,7 +120,7 @@ function App() {
         <Card data={info} nomenclature={nom} />
         <Button changeNom={changeDegrees} nomenclature={nom} />
       </main>
-      <div className="fixed bottom-1">
+      <div className="absolute bottom-1">
         <Footer />
       </div>
     </div>
