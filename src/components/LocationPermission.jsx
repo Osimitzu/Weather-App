@@ -11,7 +11,7 @@ export const LocationPermission = ({ agreementData, visible }) => {
         <h1 className="text-center text-4xl text-colorP10 dark:text-colorP4">
           Weather App
         </h1>
-        <h2 className="bg-colorP3 bg-opacity-50 text-colorP8 p-2 rounded-xl flex-wrap">
+        <h2 className=" text-colorP8 p-2 rounded-xl flex-wrap">
           Welcome to our weather app! We'll provide you with the local forecast,
           but first, we need to ask for your location.
         </h2>
