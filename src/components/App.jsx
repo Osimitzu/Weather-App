@@ -110,7 +110,7 @@ function App() {
         <Title />
         <DarkButton themeInfo={handleChangeTheme} />
       </nav>
-      <div className="appSearchContainer absolute top-14 outline-none border-none">
+      <div className="appSearchContainer absolute top-16 outline-none border-none">
         <SearchInput
           handleInputClick={handleSearch}
           handleInputChange={handleInputValue}
