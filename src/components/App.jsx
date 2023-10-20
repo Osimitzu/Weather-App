@@ -116,11 +116,11 @@ function App() {
           handleInputChange={handleInputValue}
         />
       </div>
-      <main className="w-full flex justify-center items-center flex-col p-2">
+      <main className="w-full flex justify-center items-center flex-col p-2 mt-4">
         <Card data={info} nomenclature={nom} />
         <Button changeNom={changeDegrees} nomenclature={nom} />
       </main>
-      <div className="fixed bottom-3">
+      <div className="fixed bottom-1">
         <Footer />
       </div>
     </div>
