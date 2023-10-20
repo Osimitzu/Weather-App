@@ -101,7 +101,7 @@ function App() {
   };
 
   return (
-    <div className="app bg-gradient-to-b from-colorP7 to-colorP3 dark:bg-gradient-to-b dark:from-colorP11 dark:to-colorP7 text-colorP3">
+    <div className="app w-full h-screen bg-gradient-to-b from-colorP7 to-colorP3 dark:bg-gradient-to-b dark:from-colorP11 dark:to-colorP7 text-colorP3">
       <LocationPermission
         agreementData={locationAgreement}
         visible={isVisible}
@@ -120,7 +120,7 @@ function App() {
         <Card data={info} nomenclature={nom} />
         <Button changeNom={changeDegrees} nomenclature={nom} />
       </main>
-      <div className="absolute bottom-3">
+      <div className="fixed bottom-3">
         <Footer />
       </div>
     </div>
