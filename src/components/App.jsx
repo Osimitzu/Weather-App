@@ -110,13 +110,13 @@ function App() {
         <Title />
         <DarkButton themeInfo={handleChangeTheme} />
       </nav>
-      <div className="appSearchContainer absolute top-20 outline-none border-none">
+      <div className="appSearchContainer absolute top-14 outline-none border-none">
         <SearchInput
           handleInputClick={handleSearch}
           handleInputChange={handleInputValue}
         />
       </div>
-      <main className="w-full flex justify-center items-center flex-col p-2 mt-4">
+      <main className="w-full flex justify-center items-center flex-col p-2 mt-10">
         <Card data={info} nomenclature={nom} />
         <Button changeNom={changeDegrees} nomenclature={nom} />
       </main>
